@@ -30,7 +30,7 @@ body {
         radial-gradient(circle at top left, rgba(179, 18, 23, 0.26), transparent 34%),
         radial-gradient(circle at 85% 18%, rgba(179, 18, 23, 0.18), transparent 24%),
         linear-gradient(180deg, #050505 0%, #090909 50%, #050505 100%);
-    font-family: "Space Grotesk", sans-serif;
+    font-family: "JetBrains Mono", monospace;
     min-height: 100vh;
     overflow-x: hidden;
 }
@@ -91,7 +91,7 @@ a {
     display: flex;
     align-items: center;
     gap: 14px;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "JetBrains Mono", monospace;
     letter-spacing: 0.08em;
     text-transform: uppercase;
 }
@@ -325,7 +325,7 @@ a {
     border: 1px solid rgba(213, 31, 38, 0.28);
     background: rgba(179, 18, 23, 0.1);
     color: #ffd8da;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.82rem;
     text-transform: uppercase;
     letter-spacing: 0.08em;
@@ -382,7 +382,7 @@ a {
 .eyebrow,
 .section-tag,
 .feature-kicker {
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "JetBrains Mono", monospace;
 }
 
 .eyebrow {
@@ -549,7 +549,7 @@ h3 {
     margin: 0;
     padding: 22px;
     color: #f4f4f4;
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.88rem;
     line-height: 1.8;
     white-space: pre-wrap;
@@ -599,7 +599,7 @@ h3 {
 
 .timeline-item strong {
     color: var(--accent-bright);
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.88rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
@@ -636,7 +636,7 @@ h3 {
 
 .breadcrumb {
     color: var(--muted);
-    font-family: "IBM Plex Mono", monospace;
+    font-family: "JetBrains Mono", monospace;
     font-size: 0.84rem;
     letter-spacing: 0.04em;
     text-transform: uppercase;
