@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vault page about encryption and password protection.">
+    <title>Vault | Encryption</title>
+    <link rel="icon" type="image/x-icon" href="app.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">V</span>
+                <span>Vault</span>
+            </a>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a class="active" href="encryption.html">Encryption</a>
+                <a href="security.html">Security</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="build.html">Build</a>
+                <a href="https://t.me/smartdork" target="_blank" rel="noopener noreferrer">Contacts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <div class="breadcrumb">Vault / Encryption</div>
+            <h1 class="page-title">Encryption model</h1>
+            <p class="lead">
+                One of the biggest upgrades in the project was replacing the old custom encryption logic
+                with a safer and standard approach based on AES-GCM.
+            </p>
+
+            <section class="content two-col">
+                <article class="card">
+                    <h3>Before</h3>
+                    <p>
+                        The older version used a handmade XOR/keystream plus HMAC design.
+                        That may look interesting for experimentation, but it is not the right long-term foundation
+                        for storing passwords safely.
+                    </p>
+                </article>
+                <article class="card">
+                    <h3>Now</h3>
+                    <p>
+                        The project now uses AES-GCM through the `cryptography` library.
+                        This gives authenticated encryption with a much stronger security model
+                        and a more maintainable implementation.
+                    </p>
+                </article>
+            </section>
+
+            <section class="content">
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <strong>PBKDF2</strong>
+                        <p>User-related data is used to derive a vault secret safely.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <strong>AES-GCM</strong>
+                        <p>Each password entry is encrypted with a key derived from the vault secret and a random salt.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <strong>Migration</strong>
+                        <p>Legacy entries are still supported and automatically moved into the new format after login.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            Vault | Encryption page | Telegram: @smartdork
+        </div>
+    </footer>
+</body>
+</html>

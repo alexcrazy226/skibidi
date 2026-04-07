@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vault page about project security.">
+    <title>Vault | Security</title>
+    <link rel="icon" type="image/x-icon" href="app.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">V</span>
+                <span>Vault</span>
+            </a>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="encryption.html">Encryption</a>
+                <a class="active" href="security.html">Security</a>
+                <a href="architecture.html">Architecture</a>
+                <a href="build.html">Build</a>
+                <a href="https://t.me/smartdork" target="_blank" rel="noopener noreferrer">Contacts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <div class="breadcrumb">Vault / Security</div>
+            <h1 class="page-title">Security overview</h1>
+            <p class="lead">
+                This page focuses on the practical protections inside the app:
+                not just theory, but the things that matter in real local usage.
+            </p>
+
+            <section class="content feature-grid">
+                <article class="feature-card">
+                    <div class="feature-kicker">Clipboard</div>
+                    <h3>Auto cleanup</h3>
+                    <p>Copied passwords do not stay in the clipboard forever and are cleared automatically after a delay.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-kicker">Bruteforce</div>
+                    <h3>Login throttling</h3>
+                    <p>After several failed login attempts, the app blocks new attempts for a short time.</p>
+                </article>
+                <article class="feature-card">
+                    <div class="feature-kicker">Secrets</div>
+                    <h3>No hardcoded tokens</h3>
+                    <p>Telegram secrets are no longer stored inside the source code and are loaded from environment variables.</p>
+                </article>
+            </section>
+
+            <section class="content two-col">
+                <article class="card">
+                    <h3>Error handling</h3>
+                    <ul>
+                        <li>silent exception swallowing was reduced in important areas;</li>
+                        <li>logging is used for safer debugging;</li>
+                        <li>runtime errors are handled more cleanly without spamming the UI.</li>
+                    </ul>
+                </article>
+                <article class="card">
+                    <h3>Input safety</h3>
+                    <ul>
+                        <li>avatar loading is safer;</li>
+                        <li>broken images should not crash the app;</li>
+                        <li>site values are normalized before being stored.</li>
+                    </ul>
+                </article>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            Vault | Security page | Telegram: @smartdork
+        </div>
+    </footer>
+</body>
+</html>

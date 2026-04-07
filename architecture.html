@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Vault page about project architecture and modules.">
+    <title>Vault | Architecture</title>
+    <link rel="icon" type="image/x-icon" href="app.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="topbar">
+        <div class="container topbar-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-mark">V</span>
+                <span>Vault</span>
+            </a>
+            <nav class="nav">
+                <a href="index.html">Home</a>
+                <a href="encryption.html">Encryption</a>
+                <a href="security.html">Security</a>
+                <a class="active" href="architecture.html">Architecture</a>
+                <a href="build.html">Build</a>
+                <a href="https://t.me/smartdork" target="_blank" rel="noopener noreferrer">Contacts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page">
+        <div class="container">
+            <div class="breadcrumb">Vault / Architecture</div>
+            <h1 class="page-title">Project architecture</h1>
+            <p class="lead">
+                The project moved away from a single oversized class into a cleaner modular structure,
+                where the UI, data layer, crypto layer, and services each have a more focused role.
+            </p>
+
+            <section class="content">
+                <div class="timeline">
+                    <article class="timeline-item">
+                        <strong>main.py</strong>
+                        <p>Minimal entry point that starts the main Tkinter application window.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <strong>config.py</strong>
+                        <p>Constants, bundled resource paths, wallpaper folder, icon path, and shared configuration values.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <strong>db.py</strong>
+                        <p>SQLite access, schema setup, migrations, and transactional updates.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <strong>crypto.py</strong>
+                        <p>Password encryption and decryption, key derivation, and legacy compatibility support.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <strong>auth.py</strong>
+                        <p>Registration, login, session state, failed-attempt handling, and settings updates.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <strong>vault.py</strong>
+                        <p>Business logic around entries: saving, deleting, validating, decrypting, and migration of stored records.</p>
+                    </article>
+                    <article class="timeline-item">
+                        <strong>ui/app.py</strong>
+                        <p>The visible application layer: themes, forms, list rendering, wallpapers, music, settings, and event handling.</p>
+                    </article>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            Vault | Architecture page | Telegram: @smartdork
+        </div>
+    </footer>
+</body>
+</html>
