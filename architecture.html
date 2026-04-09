@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="font-jetbrains">
     <header class="topbar">
         <div class="container topbar-inner">
             <a class="brand" href="index.html">
@@ -19,54 +19,69 @@
                 <span>Vault</span>
             </a>
             <nav class="nav">
-                <a href="index.html">Home</a>
-                <a href="encryption.html">Encryption</a>
-                <a href="security.html">Security</a>
-                <a class="active" href="architecture.html">Architecture</a>
-                <a href="build.html">Build</a>
-                <a href="https://t.me/smartdork" target="_blank" rel="noopener noreferrer">Contacts</a>
+                <a href="index.html" data-i18n="nav_home">Главная</a>
+                <a href="encryption.html" data-i18n="nav_encryption">Шифрование</a>
+                <a href="security.html" data-i18n="nav_security">Безопасность</a>
+                <a class="active" href="architecture.html" data-i18n="nav_architecture">Архитектура</a>
+                <a href="build.html" data-i18n="nav_build">Сборка</a>
+                <a href="https://github.com/alexcrazy226/Vault" target="_blank" rel="noopener noreferrer" data-i18n="nav_github">GitHub</a>
+                <a href="https://github.com/alexcrazy226/Vault/releases" target="_blank" rel="noopener noreferrer" data-i18n="nav_releases">Релизы</a>
+                <a href="https://t.me/smartdork" target="_blank" rel="noopener noreferrer" data-i18n="nav_contacts">Контакты</a>
             </nav>
+            <div class="topbar-controls">
+                <div class="control-group">
+                    <span class="control-label" data-i18n="control_language">Язык</span>
+                    <div class="toggle-row">
+                        <button class="toggle-chip is-active" type="button" data-language-button="ru">RU</button>
+                        <button class="toggle-chip" type="button" data-language-button="en">EN</button>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <span class="control-label" data-i18n="control_font">Шрифт</span>
+                    <div class="toggle-row">
+                        <button class="toggle-chip is-active" type="button" data-font-button="jetbrains" data-i18n="font_jetbrains">MonoBrain Jet</button>
+                        <button class="toggle-chip" type="button" data-font-button="minecraft" data-i18n="font_minecraft">Minecraft</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
     <main class="page">
         <div class="container">
-            <div class="breadcrumb">Vault / Architecture</div>
-            <h1 class="page-title">Project architecture</h1>
-            <p class="lead">
-                The project moved away from a single oversized class into a cleaner modular structure,
-                where the UI, data layer, crypto layer, and services each have a more focused role.
-            </p>
+            <div class="breadcrumb" data-i18n="architecture_breadcrumb">Vault / Архитектура</div>
+            <h1 class="page-title" data-i18n="architecture_title">Архитектура проекта</h1>
+            <p class="lead" data-i18n="architecture_lead">Проект ушёл от одного огромного класса к более чистой модульной структуре, где UI, база данных, криптография и сервисы имеют свою роль.</p>
 
             <section class="content">
                 <div class="timeline">
                     <article class="timeline-item">
                         <strong>main.py</strong>
-                        <p>Minimal entry point that starts the main Tkinter application window.</p>
+                        <p data-i18n="architecture_main">Минимальная точка входа, которая запускает главное окно Tkinter-приложения.</p>
                     </article>
                     <article class="timeline-item">
                         <strong>config.py</strong>
-                        <p>Constants, bundled resource paths, wallpaper folder, icon path, and shared configuration values.</p>
+                        <p data-i18n="architecture_config">Константы, пути к ресурсам, папка обоев, путь к иконке и общие значения конфигурации.</p>
                     </article>
                     <article class="timeline-item">
                         <strong>db.py</strong>
-                        <p>SQLite access, schema setup, migrations, and transactional updates.</p>
+                        <p data-i18n="architecture_db">Работа с SQLite, создание схемы, миграции и транзакционные обновления.</p>
                     </article>
                     <article class="timeline-item">
                         <strong>crypto.py</strong>
-                        <p>Password encryption and decryption, key derivation, and legacy compatibility support.</p>
+                        <p data-i18n="architecture_crypto">Шифрование и дешифрование паролей, derivation ключей и поддержка старого формата.</p>
                     </article>
                     <article class="timeline-item">
                         <strong>auth.py</strong>
-                        <p>Registration, login, session state, failed-attempt handling, and settings updates.</p>
+                        <p data-i18n="architecture_auth">Регистрация, вход, сессия, неудачные попытки и обновление настроек.</p>
                     </article>
                     <article class="timeline-item">
                         <strong>vault.py</strong>
-                        <p>Business logic around entries: saving, deleting, validating, decrypting, and migration of stored records.</p>
+                        <p data-i18n="architecture_vault">Бизнес-логика записей: сохранение, удаление, проверка, расшифровка и миграция данных.</p>
                     </article>
                     <article class="timeline-item">
                         <strong>ui/app.py</strong>
-                        <p>The visible application layer: themes, forms, list rendering, wallpapers, music, settings, and event handling.</p>
+                        <p data-i18n="architecture_ui">Видимый слой приложения: темы, формы, список записей, обои, музыка, настройки и обработка событий.</p>
                     </article>
                 </div>
             </section>
@@ -74,9 +89,8 @@
     </main>
 
     <footer>
-        <div class="container">
-            Vault | Architecture page | Telegram: @smartdork
-        </div>
+        <div class="container" data-i18n="footer_note">Vault | GitHub Pages | Telegram: @smartdork | это сайт для школьного проекта, не пишите мне!</div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>

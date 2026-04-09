@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vault is a local password manager built with Python, Tkinter, SQLite, and modern encryption.">
+    <meta name="description" data-i18n-content="hero_text" content="Локальный password manager с тёмным визуальным стилем, SQLite-хранилищем, современным шифрованием, темами, аватарками, музыкой и пользовательскими обоями.">
     <title>Vault | Home</title>
     <link rel="icon" type="image/x-icon" href="app.ico">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="font-jetbrains">
     <header class="topbar">
         <div class="container topbar-inner">
             <a class="brand" href="index.html">
@@ -19,13 +19,31 @@
                 <span>Vault</span>
             </a>
             <nav class="nav">
-                <a class="active" href="index.html">Home</a>
-                <a href="encryption.html">Encryption</a>
-                <a href="security.html">Security</a>
-                <a href="architecture.html">Architecture</a>
-                <a href="build.html">Build</a>
-                <a href="https://t.me/smartdork" target="_blank" rel="noopener noreferrer">Contacts</a>
+                <a class="active" href="index.html" data-i18n="nav_home">Главная</a>
+                <a href="encryption.html" data-i18n="nav_encryption">Шифрование</a>
+                <a href="security.html" data-i18n="nav_security">Безопасность</a>
+                <a href="architecture.html" data-i18n="nav_architecture">Архитектура</a>
+                <a href="build.html" data-i18n="nav_build">Сборка</a>
+                <a href="https://github.com/alexcrazy226/Vault" target="_blank" rel="noopener noreferrer" data-i18n="nav_github">GitHub</a>
+                <a href="https://github.com/alexcrazy226/Vault/releases" target="_blank" rel="noopener noreferrer" data-i18n="nav_releases">Релизы</a>
+                <a href="https://t.me/smartdork" target="_blank" rel="noopener noreferrer" data-i18n="nav_contacts">Контакты</a>
             </nav>
+            <div class="topbar-controls">
+                <div class="control-group">
+                    <span class="control-label" data-i18n="control_language">Язык</span>
+                    <div class="toggle-row">
+                        <button class="toggle-chip is-active" type="button" data-language-button="ru">RU</button>
+                        <button class="toggle-chip" type="button" data-language-button="en">EN</button>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <span class="control-label" data-i18n="control_font">Шрифт</span>
+                    <div class="toggle-row">
+                        <button class="toggle-chip is-active" type="button" data-font-button="jetbrains" data-i18n="font_jetbrains">MonoBrain Jet</button>
+                        <button class="toggle-chip" type="button" data-font-button="minecraft" data-i18n="font_minecraft">Minecraft</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -34,17 +52,12 @@
             <div class="container hero-shell reveal">
                 <div class="hero-grid">
                     <div class="hero-copy">
-                        <div class="eyebrow">GitHub Pages | Desktop-first | Python / Tkinter</div>
+                        <div class="eyebrow" data-i18n="hero_eyebrow">GitHub Pages | Desktop-first | Python / Tkinter</div>
                         <h1>Vault</h1>
-                        <p>
-                            A local password manager with a dark visual identity, SQLite storage,
-                            modern encryption, themes, avatars, music, and custom wallpapers.
-                            This site is now split into several focused pages so each key part of the project
-                            can be shown separately and clearly.
-                        </p>
+                        <p data-i18n="hero_text">Локальный password manager с тёмным визуальным стилем, SQLite-хранилищем, современным шифрованием, темами, аватарками, музыкой и пользовательскими обоями. Сайт разбит на несколько отдельных страниц, чтобы ключевые части проекта было проще показать.</p>
                         <div class="hero-actions">
-                            <a class="button button-primary" href="security.html">Explore Security</a>
-                            <a class="button button-secondary" href="architecture.html">See Architecture</a>
+                            <a class="button button-primary" href="security.html" data-i18n="hero_primary">Открыть безопасность</a>
+                            <a class="button button-secondary" href="architecture.html" data-i18n="hero_secondary">Смотреть архитектуру</a>
                         </div>
                     </div>
 
@@ -71,19 +84,19 @@
                 <div class="stats">
                     <article class="stat reveal reveal-delay-1 tilt-card">
                         <strong>5</strong>
-                        <span>separate pages</span>
+                        <span data-i18n="stat_pages">отдельных страниц</span>
                     </article>
                     <article class="stat reveal reveal-delay-2 tilt-card">
                         <strong>AES-GCM</strong>
-                        <span>modern encryption</span>
+                        <span data-i18n="stat_encryption">современное шифрование</span>
                     </article>
                     <article class="stat reveal reveal-delay-3 tilt-card">
                         <strong>SQLite</strong>
-                        <span>local database</span>
+                        <span data-i18n="stat_database">локальная база данных</span>
                     </article>
                     <article class="stat reveal reveal-delay-4 tilt-card">
                         <strong>.exe</strong>
-                        <span>ready desktop build</span>
+                        <span data-i18n="stat_build">готовая desktop-сборка</span>
                     </article>
                 </div>
             </div>
@@ -93,40 +106,37 @@
             <div class="container">
                 <div class="section-header">
                     <div>
-                        <div class="section-tag">Overview</div>
-                        <h2>What this site covers</h2>
+                        <div class="section-tag" data-i18n="overview_tag">Обзор</div>
+                        <h2 data-i18n="overview_title">Что показывает этот сайт</h2>
                     </div>
-                    <div class="section-copy">
-                        Instead of one long landing page, the site now works like a compact project showcase.
-                        Each important area has its own page: encryption, security, architecture, and build details.
-                    </div>
+                    <div class="section-copy" data-i18n="overview_copy">Вместо одной длинной landing page здесь сделан компактный showcase проекта. Каждая важная часть вынесена отдельно: шифрование, безопасность, архитектура и сборка.</div>
                 </div>
 
                 <div class="feature-grid">
                     <article class="feature-card tilt-card reveal reveal-delay-1">
-                        <div class="feature-kicker">Encryption</div>
-                        <h3>How passwords are protected</h3>
-                        <p>A focused page about why the project moved from custom crypto to AES-GCM through the cryptography library.</p>
+                        <div class="feature-kicker" data-i18n="card_encryption_tag">Шифрование</div>
+                        <h3 data-i18n="card_encryption_title">Как защищаются пароли</h3>
+                        <p data-i18n="card_encryption_text">Отдельная страница о том, почему проект ушёл от самописной криптографии к AES-GCM через библиотеку cryptography.</p>
                         <div class="button-row">
-                            <a class="button button-secondary" href="encryption.html">Open page</a>
+                            <a class="button button-secondary" href="encryption.html" data-i18n="open_page">Открыть страницу</a>
                         </div>
                     </article>
 
                     <article class="feature-card tilt-card reveal reveal-delay-2">
-                        <div class="feature-kicker">Security</div>
-                        <h3>Practical protection steps</h3>
-                        <p>Clipboard cleanup, bruteforce protection, environment-based secrets, and safer runtime behavior.</p>
+                        <div class="feature-kicker" data-i18n="card_security_tag">Безопасность</div>
+                        <h3 data-i18n="card_security_title">Практические защитные меры</h3>
+                        <p data-i18n="card_security_text">Очистка буфера обмена, защита от bruteforce, секреты через переменные окружения и более безопасное поведение приложения.</p>
                         <div class="button-row">
-                            <a class="button button-secondary" href="security.html">Open page</a>
+                            <a class="button button-secondary" href="security.html" data-i18n="open_page">Открыть страницу</a>
                         </div>
                     </article>
 
                     <article class="feature-card tilt-card reveal reveal-delay-3">
-                        <div class="feature-kicker">Architecture</div>
-                        <h3>Cleaner project structure</h3>
-                        <p>A dedicated page about how the monolithic version was split into UI, database, crypto, auth, and service modules.</p>
+                        <div class="feature-kicker" data-i18n="card_architecture_tag">Архитектура</div>
+                        <h3 data-i18n="card_architecture_title">Более чистая структура проекта</h3>
+                        <p data-i18n="card_architecture_text">Отдельная страница о том, как монолитный вариант был разделён на UI, базу данных, криптографию, auth и сервисные модули.</p>
                         <div class="button-row">
-                            <a class="button button-secondary" href="architecture.html">Open page</a>
+                            <a class="button button-secondary" href="architecture.html" data-i18n="open_page">Открыть страницу</a>
                         </div>
                     </article>
                 </div>
@@ -137,36 +147,33 @@
             <div class="container">
                 <div class="section-header">
                     <div>
-                        <div class="section-tag">Interactive Demo</div>
-                        <h2>See how Vault feels in action</h2>
+                        <div class="section-tag" data-i18n="demo_tag">Интерактивная демо</div>
+                        <h2 data-i18n="demo_title">Посмотри, как Vault ощущается в работе</h2>
                     </div>
-                    <div class="section-copy">
-                        This is a browser-based preview inspired by the desktop app flow:
-                        search entries, open a record, reveal the password, and watch how protection steps work.
-                    </div>
+                    <div class="section-copy" data-i18n="demo_copy">Это browser-based preview, вдохновлённый desktop-логикой приложения: поиск по записям, открытие аккаунта, показ пароля и демонстрация защитных шагов.</div>
                 </div>
 
                 <div class="demo-shell">
                     <div class="demo-sidebar floating-panel reveal reveal-delay-1">
                         <label class="demo-search">
-                            <span>Search entries</span>
-                            <input id="vaultSearch" type="text" placeholder="Try github, gmail, steam...">
+                            <span data-i18n="search_label">Поиск записей</span>
+                            <input id="vaultSearch" type="text" placeholder="Попробуй github, gmail, steam..." data-i18n-placeholder="search_placeholder">
                         </label>
 
                         <div id="vaultList" class="vault-list" aria-live="polite">
-                            <button class="vault-item active" type="button" data-site="github.com" data-login="smartdork" data-password="ghp_x91!vaultDemo42" data-strength="Strong" data-last="2 hours ago">
+                            <button class="vault-item active" type="button" data-site="github.com" data-login="smartdork" data-password="ghp_x91!vaultDemo42" data-strength="strong" data-last="2h">
                                 <strong>github.com</strong>
                                 <span>smartdork</span>
                             </button>
-                            <button class="vault-item" type="button" data-site="gmail.com" data-login="smartdork.mail" data-password="M4il!Safe#2026" data-strength="Strong" data-last="Yesterday">
+                            <button class="vault-item" type="button" data-site="gmail.com" data-login="smartdork.mail" data-password="M4il!Safe#2026" data-strength="strong" data-last="yesterday">
                                 <strong>gmail.com</strong>
                                 <span>smartdork.mail</span>
                             </button>
-                            <button class="vault-item" type="button" data-site="steamcommunity.com" data-login="corn_vault" data-password="St34m?Locker%77" data-strength="Strong" data-last="3 days ago">
+                            <button class="vault-item" type="button" data-site="steamcommunity.com" data-login="corn_vault" data-password="St34m?Locker%77" data-strength="strong" data-last="3d">
                                 <strong>steamcommunity.com</strong>
                                 <span>corn_vault</span>
                             </button>
-                            <button class="vault-item" type="button" data-site="college.portal.local" data-login="student.demo" data-password="VaultClass!908" data-strength="Medium" data-last="1 week ago">
+                            <button class="vault-item" type="button" data-site="college.portal.local" data-login="student.demo" data-password="VaultClass!908" data-strength="medium" data-last="week">
                                 <strong>college.portal.local</strong>
                                 <span>student.demo</span>
                             </button>
@@ -176,37 +183,37 @@
                     <div class="demo-view panel floating-panel reveal reveal-delay-2">
                         <div class="demo-topline">
                             <div>
-                                <div class="feature-kicker">Entry Preview</div>
+                                <div class="feature-kicker" data-i18n="preview_tag">Предпросмотр записи</div>
                                 <h3 id="demoTitle">github.com</h3>
                             </div>
-                            <span id="demoStrength" class="strength-pill">Strong</span>
+                            <span id="demoStrength" class="strength-pill">Сильный</span>
                         </div>
 
                         <div class="demo-fields">
                             <div class="demo-field">
-                                <span>Site</span>
+                                <span data-i18n="field_site">Сайт</span>
                                 <strong id="demoSite">github.com</strong>
                             </div>
                             <div class="demo-field">
-                                <span>Login</span>
+                                <span data-i18n="field_login">Логин</span>
                                 <strong id="demoLogin">smartdork</strong>
                             </div>
                             <div class="demo-field">
-                                <span>Password</span>
+                                <span data-i18n="field_password">Пароль</span>
                                 <div class="password-row">
                                     <strong id="demoPassword">******************</strong>
-                                    <button id="togglePassword" class="button button-secondary button-small" type="button">Reveal</button>
+                                    <button id="togglePassword" class="button button-secondary button-small" type="button" data-i18n="button_reveal">Показать</button>
                                 </div>
                             </div>
                             <div class="demo-field">
-                                <span>Last updated</span>
-                                <strong id="demoLast">2 hours ago</strong>
+                                <span data-i18n="field_last">Последнее обновление</span>
+                                <strong id="demoLast">2 часа назад</strong>
                             </div>
                         </div>
 
                         <div class="demo-actions">
-                            <button id="copyPassword" class="button button-primary" type="button">Copy password</button>
-                            <button id="encryptPreview" class="button button-secondary" type="button">Show encryption</button>
+                            <button id="copyPassword" class="button button-primary" type="button" data-i18n="button_copy">Скопировать пароль</button>
+                            <button id="encryptPreview" class="button button-secondary" type="button" data-i18n="button_encrypt">Показать шифрование</button>
                         </div>
 
                         <div class="terminal demo-terminal">
@@ -215,10 +222,10 @@
                                 <span></span>
                                 <span></span>
                             </div>
-                            <pre id="demoLog">Vault demo ready.
-Entry selected: github.com
-Clipboard status: idle
-Encryption status: protected with AES-GCM</pre>
+                            <pre id="demoLog">Vault demo готово.
+Выбрана запись: github.com
+Статус буфера: ожидание
+Статус шифрования: защищено через AES-GCM</pre>
                         </div>
                     </div>
                 </div>
@@ -227,25 +234,49 @@ Encryption status: protected with AES-GCM</pre>
 
         <section class="section reveal">
             <div class="container">
+                <div class="feature-grid utility-grid">
+                    <article class="feature-card reveal reveal-delay-1">
+                        <div class="feature-kicker" data-i18n="project_note_title">О проекте</div>
+                        <h3>Vault</h3>
+                        <p data-i18n="project_note_text">Это учебный школьный проект, сделанный как локальный desktop password manager на Python.</p>
+                    </article>
+                    <article class="feature-card reveal reveal-delay-2">
+                        <div class="feature-kicker">GitHub</div>
+                        <h3>Vault Repository</h3>
+                        <p>Python sources, project structure, build files, and application assets.</p>
+                        <div class="button-row">
+                            <a class="button button-secondary" href="https://github.com/alexcrazy226/Vault" target="_blank" rel="noopener noreferrer" data-i18n="github_button">Открыть GitHub проекта</a>
+                        </div>
+                    </article>
+                    <article class="feature-card reveal reveal-delay-3">
+                        <div class="feature-kicker">Releases</div>
+                        <h3>Vault.exe</h3>
+                        <p>Windows build available from the GitHub Releases page.</p>
+                        <div class="button-row">
+                            <a class="button button-secondary" href="https://github.com/alexcrazy226/Vault/releases" target="_blank" rel="noopener noreferrer" data-i18n="releases_button">Скачать из Releases</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section reveal">
+            <div class="container">
                 <div class="contact-card">
                     <div>
-                        <div class="section-tag">Contacts</div>
-                        <h3>Reach me on Telegram</h3>
-                        <p>Click the button and it will open my Telegram directly.</p>
-                        <p>this is site for a school project, dont contact me!</p>
+                        <div class="section-tag" data-i18n="contacts_tag">Контакты</div>
+                        <h3 data-i18n="contacts_title">Связь через Telegram</h3>
+                        <p data-i18n="contacts_text">Кнопка ниже откроет мой Telegram.</p>
+                        <p class="project-warning" data-i18n="school_note">это сайт для школьного проекта, не пишите мне!</p>
                     </div>
-                    <a class="button button-primary" href="https://t.me/smartdork" target="_blank" rel="noopener noreferrer">
-                        Open @smartdork
-                    </a>
+                    <a class="button button-primary" href="https://t.me/smartdork" target="_blank" rel="noopener noreferrer" data-i18n="contacts_button">Открыть @smartdork</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <div class="container">
-            Vault | GitHub Pages | Telegram: @smartdork | this is site for a school project, dont contact me!
-        </div>
+        <div class="container" data-i18n="footer_note">Vault | GitHub Pages | Telegram: @smartdork | это сайт для школьного проекта, не пишите мне!</div>
     </footer>
     <script src="script.js"></script>
 </body>

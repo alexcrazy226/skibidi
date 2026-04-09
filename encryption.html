@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="font-jetbrains">
     <header class="topbar">
         <div class="container topbar-inner">
             <a class="brand" href="index.html">
@@ -19,41 +19,48 @@
                 <span>Vault</span>
             </a>
             <nav class="nav">
-                <a href="index.html">Home</a>
-                <a class="active" href="encryption.html">Encryption</a>
-                <a href="security.html">Security</a>
-                <a href="architecture.html">Architecture</a>
-                <a href="build.html">Build</a>
-                <a href="https://t.me/smartdork" target="_blank" rel="noopener noreferrer">Contacts</a>
+                <a href="index.html" data-i18n="nav_home">Главная</a>
+                <a class="active" href="encryption.html" data-i18n="nav_encryption">Шифрование</a>
+                <a href="security.html" data-i18n="nav_security">Безопасность</a>
+                <a href="architecture.html" data-i18n="nav_architecture">Архитектура</a>
+                <a href="build.html" data-i18n="nav_build">Сборка</a>
+                <a href="https://github.com/alexcrazy226/Vault" target="_blank" rel="noopener noreferrer" data-i18n="nav_github">GitHub</a>
+                <a href="https://github.com/alexcrazy226/Vault/releases" target="_blank" rel="noopener noreferrer" data-i18n="nav_releases">Релизы</a>
+                <a href="https://t.me/smartdork" target="_blank" rel="noopener noreferrer" data-i18n="nav_contacts">Контакты</a>
             </nav>
+            <div class="topbar-controls">
+                <div class="control-group">
+                    <span class="control-label" data-i18n="control_language">Язык</span>
+                    <div class="toggle-row">
+                        <button class="toggle-chip is-active" type="button" data-language-button="ru">RU</button>
+                        <button class="toggle-chip" type="button" data-language-button="en">EN</button>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <span class="control-label" data-i18n="control_font">Шрифт</span>
+                    <div class="toggle-row">
+                        <button class="toggle-chip is-active" type="button" data-font-button="jetbrains" data-i18n="font_jetbrains">MonoBrain Jet</button>
+                        <button class="toggle-chip" type="button" data-font-button="minecraft" data-i18n="font_minecraft">Minecraft</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </header>
 
     <main class="page">
         <div class="container">
-            <div class="breadcrumb">Vault / Encryption</div>
-            <h1 class="page-title">Encryption model</h1>
-            <p class="lead">
-                One of the biggest upgrades in the project was replacing the old custom encryption logic
-                with a safer and standard approach based on AES-GCM.
-            </p>
+            <div class="breadcrumb" data-i18n="encryption_breadcrumb">Vault / Шифрование</div>
+            <h1 class="page-title" data-i18n="encryption_title">Модель шифрования</h1>
+            <p class="lead" data-i18n="encryption_lead">Одним из главных улучшений проекта стала замена старой самописной схемы шифрования на более безопасный и стандартный подход на базе AES-GCM.</p>
 
             <section class="content two-col">
                 <article class="card">
-                    <h3>Before</h3>
-                    <p>
-                        The older version used a handmade XOR/keystream plus HMAC design.
-                        That may look interesting for experimentation, but it is not the right long-term foundation
-                        for storing passwords safely.
-                    </p>
+                    <h3 data-i18n="encryption_before">Раньше</h3>
+                    <p data-i18n="encryption_before_text">Старая версия использовала самодельную схему XOR/keystream + HMAC. Для экспериментов это интересно, но для безопасного хранения паролей это плохая долгосрочная основа.</p>
                 </article>
                 <article class="card">
-                    <h3>Now</h3>
-                    <p>
-                        The project now uses AES-GCM through the `cryptography` library.
-                        This gives authenticated encryption with a much stronger security model
-                        and a more maintainable implementation.
-                    </p>
+                    <h3 data-i18n="encryption_now">Сейчас</h3>
+                    <p data-i18n="encryption_now_text">Теперь проект использует AES-GCM через библиотеку cryptography. Это даёт authenticated encryption и намного более надёжную и поддерживаемую реализацию.</p>
                 </article>
             </section>
 
@@ -61,15 +68,15 @@
                 <div class="timeline">
                     <article class="timeline-item">
                         <strong>PBKDF2</strong>
-                        <p>User-related data is used to derive a vault secret safely.</p>
+                        <p data-i18n="encryption_step1">Данные пользователя безопасно используются для получения vault-ключа.</p>
                     </article>
                     <article class="timeline-item">
                         <strong>AES-GCM</strong>
-                        <p>Each password entry is encrypted with a key derived from the vault secret and a random salt.</p>
+                        <p data-i18n="encryption_step2">Каждая запись шифруется ключом, производным от vault-секрета и случайной соли.</p>
                     </article>
                     <article class="timeline-item">
                         <strong>Migration</strong>
-                        <p>Legacy entries are still supported and automatically moved into the new format after login.</p>
+                        <p data-i18n="encryption_step3">Старые записи поддерживаются и автоматически переносятся в новый формат после входа.</p>
                     </article>
                 </div>
             </section>
@@ -77,9 +84,8 @@
     </main>
 
     <footer>
-        <div class="container">
-            Vault | Encryption page | Telegram: @smartdork
-        </div>
+        <div class="container" data-i18n="footer_note">Vault | GitHub Pages | Telegram: @smartdork | это сайт для школьного проекта, не пишите мне!</div>
     </footer>
+    <script src="script.js"></script>
 </body>
 </html>
