@@ -303,6 +303,7 @@ const copyButton = document.getElementById("copyPassword");
 const encryptButton = document.getElementById("encryptPreview");
 const languageButtons = Array.from(document.querySelectorAll("[data-language-button]"));
 const fontButtons = Array.from(document.querySelectorAll("[data-font-button]"));
+let mobileMenuButton = null;
 
 let activeEntry = vaultItems[0] ?? null;
 let passwordVisible = false;
@@ -604,6 +605,7 @@ function initPreferences() {
         button.addEventListener("click", () => {
             localStorage.setItem(LANGUAGE_KEY, button.dataset.languageButton);
             applyTranslations();
+            updateMobileMenuLabel();
         });
     });
 
@@ -613,6 +615,58 @@ function initPreferences() {
             applyFont();
         });
     });
+}
+
+function getMobileMenuLabel(isOpen) {
+    const language = getLanguage();
+
+    if (language === "en") {
+        return isOpen ? "Close" : "Menu";
+    }
+
+    return isOpen ? "Закрыть" : "Меню";
+}
+
+function updateMobileMenuLabel() {
+    if (!mobileMenuButton) {
+        return;
+    }
+
+    const isOpen = document.body.classList.contains("mobile-nav-open");
+    mobileMenuButton.textContent = getMobileMenuLabel(isOpen);
+}
+
+function initMobileNavigation() {
+    const topbar = document.querySelector(".topbar-inner");
+    const nav = document.querySelector(".nav");
+
+    if (!topbar || !nav) {
+        return;
+    }
+
+    mobileMenuButton = document.createElement("button");
+    mobileMenuButton.className = "mobile-menu-toggle";
+    mobileMenuButton.type = "button";
+    mobileMenuButton.setAttribute("aria-controls", "siteNavigation");
+    mobileMenuButton.setAttribute("aria-expanded", "false");
+    nav.id = "siteNavigation";
+
+    mobileMenuButton.addEventListener("click", () => {
+        const isOpen = document.body.classList.toggle("mobile-nav-open");
+        mobileMenuButton.setAttribute("aria-expanded", String(isOpen));
+        updateMobileMenuLabel();
+    });
+
+    nav.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+            document.body.classList.remove("mobile-nav-open");
+            mobileMenuButton.setAttribute("aria-expanded", "false");
+            updateMobileMenuLabel();
+        });
+    });
+
+    topbar.insertBefore(mobileMenuButton, nav);
+    updateMobileMenuLabel();
 }
 
 vaultItems.forEach((item) => {
@@ -636,4 +690,5 @@ encryptButton?.addEventListener("click", () => {
 renderEntry(activeEntry);
 animateReveal();
 attachTiltCards();
+initMobileNavigation();
 initPreferences();
